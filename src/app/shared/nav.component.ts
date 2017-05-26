@@ -23,6 +23,10 @@ export class SkyDemoNavComponent {
     {
       title: 'Design' ,
       url: '/design'
+    },
+    {
+      title: 'Guidelines' ,
+      url: '/guidelines'
     }
   ];
 }
