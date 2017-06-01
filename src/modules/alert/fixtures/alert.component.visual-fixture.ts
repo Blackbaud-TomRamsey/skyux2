@@ -11,7 +11,7 @@ import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
   selector: 'sky-demo-app',
   templateUrl: './alert.component.visual-fixture.html'
 })
-class AppComponent {
+export class AppComponent {
   public alertCloseable = true;
 }
 
@@ -28,5 +28,3 @@ class AppComponent {
   ]
 })
 export class AppModule { }
-
-platformBrowserDynamic().bootstrapModule(AppModule);

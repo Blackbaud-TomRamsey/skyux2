@@ -6,6 +6,7 @@ var helpers = require('../utils/helpers');
 var webpackMerge = require('webpack-merge'); // used to merge webpack configs
 var commonConfig = require('./webpack.common.js'); // the settings that are common to prod and dev
 var visualConfig = require('./webpack.demo-visual.js');
+var fs = require('fs-extra');
 
 var ngtools = require('@ngtools/webpack');
 
@@ -27,7 +28,65 @@ var METADATA = webpackMerge(commonConfig.metadata, {
   HMR: HMR
 });
 
+function writeTSConfig(testName, file) {
+  var config = {
+    'compilerOptions': {
+      'target': 'es5',
+      'module': 'es2015',
+      'moduleResolution': 'node',
+      'emitDecoratorMetadata': true,
+      'experimentalDecorators': true,
+      'sourceMap': true,
+      'noEmitHelpers': true,
+      'noImplicitAny': true,
+      'rootDir': '.',
+      'inlineSources': true,
+      'declaration': true,
+      'skipLibCheck': true,
+      'lib': [
+        'es2015',
+        'dom'
+      ],
+      'types': [
+        'jasmine',
+        'node'
+      ]
+    },
+    'baseUrl': './',
+    'paths': {
+      '@angular/common': ['../../../node_modules/@angular/common'],
+      '@angular/compiler': ['../../../node_modules/@angular/compiler'],
+      '@angular/core': ['../../../node_modules/@angular/core'],
+      '@angular/forms': ['../../../node_modules/@angular/forms'],
+      '@angular/platform-browser': ['../../../node_modules/@angular/platform-browser'],
+      '@angular/platform-browser-dynamic': ['../../../node_modules/@angular/platform-browser-dynamic'],
+      '@angular/router': ['../../../node_modules/@angular/router'],
+      '@angular/http': ['../../../node_modules/@angular/http']
+    },
+    'exclude': [
+      '../../../node_modules',
+      '../../../dist',
+      '../../../src/app'
+    ],
+    'compileOnSave': false,
+    'buildOnSave': false,
+    'angularCompilerOptions': {
+      'debug': true,
+      'genDir': './ngfactory',
+      'skipMetadataEmit': true,
+      'entryModule': file + '#AppModule'
+    }
+  };
+
+  fs.ensureDirSync(helpers.root('/visual/tmp/' + testName));
+
+  fs.writeJSONSync(helpers.root('/visual/tmp/' + testName + '/tsconfig.json'), config);
+
+}
+
 function getVisualWebpackConfig(testName, file) {
+
+  writeTSConfig(testName, file);
 
   var plugins = [];
   var config;
@@ -54,8 +113,7 @@ function getVisualWebpackConfig(testName, file) {
 
   plugins.push(
     new ngtools.AotPlugin({
-      tsConfigPath: helpers.root('tsconfig.json'),
-      entryModule: file + '#AppModule'
+      tsConfigPath: helpers.root('visual/tmp/' + testName + '/tsconfig.json')
     })
   );
 
@@ -70,7 +128,9 @@ function getVisualWebpackConfig(testName, file) {
         }
       ]
     },
-    entry: entry,
+    entry:
+    helpers
+      .root('src/modules/' + testName + '/fixtures/' + testName + '.component.visual-bootstrap.ts'),
     output: {
 
       /**
@@ -120,6 +180,7 @@ function getVisualWebpackConfig(testName, file) {
       clearImmediate: false,
       setImmediate: false
     },
+
     performance: {
       hints: false
     }
