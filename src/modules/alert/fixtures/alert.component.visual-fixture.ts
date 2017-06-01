@@ -5,6 +5,8 @@ import { SkyAlertModule } from '../alert.module';
 
 import { Bootstrapper } from '../../../../visual/bootstrapper';
 
+import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
+
 @Component({
   selector: 'sky-demo-app',
   templateUrl: './alert.component.visual-fixture.html'
@@ -25,6 +27,6 @@ class AppComponent {
     AppComponent
   ]
 })
-class AppModule { }
+export class AppModule { }
 
-Bootstrapper.bootstrapModule(AppModule);
+platformBrowserDynamic().bootstrapModule(AppModule);
