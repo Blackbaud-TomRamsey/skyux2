@@ -87,7 +87,8 @@ function getVisualWebpackConfig(testName, file) {
   var config;
   var entry = {};
   entry[testName] =
-    helpers.root('src/modules/' + testName + '/fixtures/' + testName + '.component.visual-bootstrap.ts');
+    helpers
+    .root('src/modules/' + testName + '/fixtures/' + testName + '.component.visual-bootstrap.ts');
   plugins.push(new HtmlWebpackPlugin({
     template: 'visual/index.html',
     chunks: ['polyfills', 'vendor', testName],
@@ -107,10 +108,15 @@ function getVisualWebpackConfig(testName, file) {
     })
   );
 
+  var visualModule
+    = 'src/modules/' + testName + '/fixtures/' + testName + '.module.visual-fixture';
+
   plugins.push(
     new ngtools.AotPlugin({
       tsConfigPath: helpers.root('tsconfig-aot.json'),
-      entryModule: file + '#AppModule'
+      entryModule:
+      helpers
+      .root(visualModule) + '#AppModule'
     })
   );
 

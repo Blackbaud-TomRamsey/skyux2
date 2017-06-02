@@ -16,16 +16,16 @@ export class AppComponent {
   public alertCloseable = true;
 }
 
-@NgModule({
-  imports: [
-    BrowserModule,
-    SkyAlertModule
-  ],
-  declarations: [
-    AppComponent
-  ],
-  bootstrap: [
-    AppComponent
-  ]
-})
-export class AppModule { }
+// @NgModule({
+//   imports: [
+//     BrowserModule,
+//     SkyAlertModule
+//   ],
+//   declarations: [
+//     AppComponent
+//   ],
+//   bootstrap: [
+//     AppComponent
+//   ]
+// })
+// export class AppModule { }
