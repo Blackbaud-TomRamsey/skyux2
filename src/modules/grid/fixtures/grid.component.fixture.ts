@@ -11,7 +11,7 @@ let moment = require('moment');
 
 @Component({
   selector: 'sky-test-cmp',
-  template: require('./grid.component.fixture.html')
+  templateUrl: './grid.component.fixture.html'
 })
 export class GridTestComponent {
   public hasToolbar: boolean = false;

@@ -9,7 +9,7 @@ import { Bootstrapper } from '../../../../visual/bootstrapper';
   selector: 'sky-demo-app',
   templateUrl: './chevron.component.visual-fixture.html'
 })
-class AppComponent {
+export class AppComponent {
   public directionUp = 'up';
   public directionDown = 'down';
 }
@@ -26,6 +26,6 @@ class AppComponent {
     AppComponent
   ]
 })
-class AppModule { }
+export class AppModule { }
 
 Bootstrapper.bootstrapModule(AppModule);

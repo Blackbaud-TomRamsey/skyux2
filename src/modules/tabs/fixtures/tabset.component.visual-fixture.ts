@@ -55,6 +55,6 @@ export class AppComponent {
     AppComponent
   ]
 })
-class AppModule { }
+export class AppModule { }
 
 Bootstrapper.bootstrapModule(AppModule);

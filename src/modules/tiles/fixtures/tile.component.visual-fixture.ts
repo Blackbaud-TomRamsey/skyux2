@@ -84,6 +84,6 @@ export class AppComponent {
     Tile2Component
   ]
 })
-class AppModule { }
+export class AppModule { }
 
 Bootstrapper.bootstrapModule(AppModule);

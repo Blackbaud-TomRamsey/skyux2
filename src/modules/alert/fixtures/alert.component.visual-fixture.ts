@@ -1,4 +1,5 @@
-import { Component, NgModule } from '@angular/core';
+import { Component, NgModule} from '@angular/core';
+
 import { BrowserModule } from '@angular/platform-browser';
 
 import { SkyAlertModule } from '../alert.module';

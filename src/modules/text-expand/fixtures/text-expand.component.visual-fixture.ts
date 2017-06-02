@@ -9,7 +9,7 @@ import { Bootstrapper } from '../../../../visual/bootstrapper';
   selector: 'sky-demo-app',
   templateUrl: './text-expand.component.visual-fixture.html'
 })
-class AppComponent {
+export class AppComponent {
   // tslint:disable-next-line
   public veryShortText: string = 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec qu';
   public shortText: string = 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec.';
@@ -29,6 +29,6 @@ class AppComponent {
     AppComponent
   ]
 })
-class AppModule { }
+export class AppModule { }
 
 Bootstrapper.bootstrapModule(AppModule);

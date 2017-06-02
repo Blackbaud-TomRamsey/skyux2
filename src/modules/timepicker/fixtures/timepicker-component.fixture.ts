@@ -9,7 +9,7 @@ import {
 import { SkyTimepickerTimeOutput } from '../timepicker.interface';
 @Component({
   selector: 'sky-test-cmp',
-  template: require('./timepicker-component.fixture.html')
+  templateUrl: './timepicker-component.fixture.html'
 })
 export class TimepickerTestComponent {
   public timeFormat: string = 'hh';

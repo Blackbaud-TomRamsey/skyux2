@@ -11,7 +11,7 @@ import { Bootstrapper } from '../../../../visual/bootstrapper';
   selector: 'sky-demo-app',
   templateUrl: './avatar.component.visual-fixture.html'
 })
-class AppComponent {
+export class AppComponent {
   public name = 'Robert C. Hernandez';
 
   public src: SkyAvatarSrc = require('./avatar.png');
@@ -35,6 +35,6 @@ class AppComponent {
     AppComponent
   ]
 })
-class AppModule { }
+export class AppModule { }
 
 Bootstrapper.bootstrapModule(AppModule);

@@ -11,7 +11,7 @@ import { Bootstrapper } from '../../../../visual/bootstrapper';
   selector: 'sky-demo-app',
   templateUrl: './card.component.visual-fixture.html'
 })
-class AppComponent { }
+export class AppComponent { }
 
 @NgModule({
   imports: [
@@ -26,6 +26,6 @@ class AppComponent { }
     AppComponent
   ]
 })
-class AppModule { }
+export class AppModule { }
 
 Bootstrapper.bootstrapModule(AppModule);

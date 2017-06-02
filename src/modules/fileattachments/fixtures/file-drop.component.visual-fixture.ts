@@ -14,7 +14,7 @@ import { Bootstrapper } from '../../../../visual/bootstrapper';
   selector: 'sky-demo-app',
   templateUrl: './file-drop.component.visual-fixture.html'
 })
-class AppComponent {
+export class AppComponent {
   public filesToUpload: Array<SkyFileItem>;
 
   public allItems: Array<SkyFileItem | SkyFileLink>;
@@ -88,6 +88,6 @@ class AppComponent {
     AppComponent
   ]
 })
-class AppModule { }
+export class AppModule { }
 
 Bootstrapper.bootstrapModule(AppModule);

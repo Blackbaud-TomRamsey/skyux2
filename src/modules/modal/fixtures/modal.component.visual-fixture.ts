@@ -13,7 +13,7 @@ import { ModalContentDemoComponent } from './modal-content.visual.content';
   selector: 'sky-demo-app',
   templateUrl: './modal.component.visual-fixture.html'
 })
-class AppComponent {
+export class AppComponent {
   constructor(public viewContainerRef: ViewContainerRef, private modal: SkyModalService) { }
 
   public openModal() {
@@ -55,6 +55,6 @@ class AppComponent {
     ModalContentDemoComponent
   ]
 })
-class AppModule { }
+export class AppModule { }
 
 Bootstrapper.bootstrapModule(AppModule);

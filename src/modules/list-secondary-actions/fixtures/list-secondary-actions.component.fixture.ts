@@ -9,7 +9,7 @@ import {
 
 @Component({
   selector: 'sky-test-cmp',
-  template: require('./list-secondary-actions.component.fixture.html')
+  templateUrl: './list-secondary-actions.component.fixture.html'
 })
 export class ListSecondaryActionsTestComponent {
 

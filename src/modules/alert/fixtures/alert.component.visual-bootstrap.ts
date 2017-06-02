@@ -1,4 +1,4 @@
-import {platformBrowser} from '@angular/platform-browser';
-import {AppModuleNgFactory} from '../../../../visual/tmp/alert/ngfactory/app/app.module.ngfactory';
+import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
+import {AppModule} from './alert.component.visual-fixture';
 
-platformBrowser().bootstrapModuleFactory(AppModuleNgFactory);
+platformBrowserDynamic().bootstrapModule(AppModule);

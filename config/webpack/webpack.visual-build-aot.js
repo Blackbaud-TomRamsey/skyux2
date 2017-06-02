@@ -52,16 +52,17 @@ function writeTSConfig(testName, file) {
         'node'
       ]
     },
-    'baseUrl': './',
+    'baseUrl': '../../../',
     'paths': {
-      '@angular/common': ['../../../node_modules/@angular/common'],
-      '@angular/compiler': ['../../../node_modules/@angular/compiler'],
-      '@angular/core': ['../../../node_modules/@angular/core'],
-      '@angular/forms': ['../../../node_modules/@angular/forms'],
-      '@angular/platform-browser': ['../../../node_modules/@angular/platform-browser'],
-      '@angular/platform-browser-dynamic': ['../../../node_modules/@angular/platform-browser-dynamic'],
-      '@angular/router': ['../../../node_modules/@angular/router'],
-      '@angular/http': ['../../../node_modules/@angular/http']
+      '@angular/common': ['node_modules/@angular/common'],
+      '@angular/compiler': ['node_modules/@angular/compiler'],
+      '@angular/core': ['node_modules/@angular/core'],
+      '@angular/forms': ['node_modules/@angular/forms'],
+      '@angular/platform-browser': ['node_modules/@angular/platform-browser'],
+      '@angular/platform-browser-dynamic':
+      ['node_modules/@angular/platform-browser-dynamic'],
+      '@angular/router': ['node_modules/@angular/router'],
+      '@angular/http': ['node_modules/@angular/http']
     },
     'exclude': [
       '../../../node_modules',
@@ -69,29 +70,24 @@ function writeTSConfig(testName, file) {
       '../../../src/app'
     ],
     'compileOnSave': false,
-    'buildOnSave': false,
-    'angularCompilerOptions': {
-      'debug': true,
-      'genDir': './ngfactory',
-      'skipMetadataEmit': true,
-      'entryModule': file + '#AppModule'
-    }
+    'buildOnSave': false
   };
 
-  fs.ensureDirSync(helpers.root('/visual/tmp/' + testName));
+  fs.ensureDirSync(helpers.root('visual/tmp/' + testName));
 
-  fs.writeJSONSync(helpers.root('/visual/tmp/' + testName + '/tsconfig.json'), config);
+  fs.writeJSONSync(helpers.root('visual/tmp/' + testName + '/tsconfig.json'), config);
 
 }
 
 function getVisualWebpackConfig(testName, file) {
 
-  writeTSConfig(testName, file);
+  // writeTSConfig(testName, file);
 
   var plugins = [];
   var config;
   var entry = {};
-  entry[testName] = file;
+  entry[testName] =
+    helpers.root('src/modules/' + testName + '/fixtures/' + testName + '.component.visual-bootstrap.ts');
   plugins.push(new HtmlWebpackPlugin({
     template: 'visual/index.html',
     chunks: ['polyfills', 'vendor', testName],
@@ -113,7 +109,8 @@ function getVisualWebpackConfig(testName, file) {
 
   plugins.push(
     new ngtools.AotPlugin({
-      tsConfigPath: helpers.root('visual/tmp/' + testName + '/tsconfig.json')
+      tsConfigPath: helpers.root('tsconfig-aot.json'),
+      entryModule: file + '#AppModule'
     })
   );
 
@@ -128,9 +125,6 @@ function getVisualWebpackConfig(testName, file) {
         }
       ]
     },
-    entry:
-    helpers
-      .root('src/modules/' + testName + '/fixtures/' + testName + '.component.visual-bootstrap.ts'),
     output: {
 
       /**
@@ -163,6 +157,7 @@ function getVisualWebpackConfig(testName, file) {
        */
       chunkFilename: '[id].chunk.js'
     },
+    entry: entry,
 
     plugins: plugins,
 

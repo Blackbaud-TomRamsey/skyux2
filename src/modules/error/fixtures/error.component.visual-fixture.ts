@@ -11,7 +11,7 @@ import { SkyModalModule } from '../../modal/modal.module';
   selector: 'sky-demo-app',
   templateUrl: './error.component.visual-fixture.html'
 })
-class AppComponent {
+export class AppComponent {
   constructor(private modal: SkyErrorModalService) { }
 
   public openModal() {
@@ -38,6 +38,6 @@ class AppComponent {
     AppComponent
   ]
 })
-class AppModule { }
+export class AppModule { }
 
 Bootstrapper.bootstrapModule(AppModule);

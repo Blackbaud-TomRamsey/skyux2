@@ -9,7 +9,7 @@ import { Bootstrapper } from '../../../../visual/bootstrapper';
   selector: 'sky-demo-app',
   templateUrl: './dropdown.component.visual-fixture.html'
 })
-class AppComponent {
+export class AppComponent {
   public dropdownOpen = false;
 
   public click() {
@@ -29,6 +29,6 @@ class AppComponent {
     AppComponent
   ]
 })
-class AppModule { }
+export class AppModule { }
 
 Bootstrapper.bootstrapModule(AppModule);

@@ -9,7 +9,7 @@ import { Bootstrapper } from '../../../../visual/bootstrapper';
   selector: 'sky-demo-app',
   templateUrl: './definition-list.component.visual-fixture.html'
 })
-class AppComponent {
+export class AppComponent {
   public personalInfo: {label: string, value?: string}[] = [
     {
       label: 'Job title',
@@ -51,6 +51,6 @@ class AppComponent {
     AppComponent
   ]
 })
-class AppModule { }
+export class AppModule { }
 
 Bootstrapper.bootstrapModule(AppModule);

@@ -11,7 +11,7 @@ import { FormsModule } from '@angular/forms';
   selector: 'sky-demo-app',
   templateUrl: './datepicker-calendar.component.visual-fixture.html'
 })
-class AppComponent {
+export class AppComponent {
   public selectedDate: Date = new Date('4/4/2017');
 }
 
@@ -28,6 +28,6 @@ class AppComponent {
     AppComponent
   ]
 })
-class AppModule { }
+export class AppModule { }
 
 Bootstrapper.bootstrapModule(AppModule);

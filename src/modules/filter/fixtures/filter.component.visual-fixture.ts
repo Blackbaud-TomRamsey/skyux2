@@ -11,7 +11,7 @@ import { Bootstrapper } from '../../../../visual/bootstrapper';
   selector: 'sky-demo-app',
   templateUrl: './filter.component.visual-fixture.html'
 })
-class AppComponent {
+export class AppComponent {
   public filtersActive: boolean = false;
 
   public appliedFilters: Array<any> = [
@@ -39,6 +39,6 @@ class AppComponent {
     AppComponent
   ]
 })
-class AppModule { }
+export class AppModule { }
 
 Bootstrapper.bootstrapModule(AppModule);

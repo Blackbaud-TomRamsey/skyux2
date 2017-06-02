@@ -7,7 +7,7 @@ import { SkyGridComponent, SkyGridColumnModel } from '../';
 
 @Component({
   selector: 'sky-test-cmp',
-  template: require('./grid-empty.component.fixture.html')
+  templateUrl: './grid-empty.component.fixture.html'
 })
 export class GridEmptyTestComponent {
   @ViewChild(SkyGridComponent)
