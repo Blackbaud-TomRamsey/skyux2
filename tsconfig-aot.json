@@ -36,7 +36,8 @@
   "exclude": [
     "node_modules",
     "dist",
-    "src/app"
+    "src/app",
+    "visual/tmp"
   ],
   "angularCompilerOptions": {
     "debug": true,
