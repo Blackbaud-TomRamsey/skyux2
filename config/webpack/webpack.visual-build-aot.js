@@ -109,7 +109,7 @@ function getVisualWebpackConfig(testName, file) {
   );
 
   var visualModule
-    = 'src/modules/' + testName + '/fixtures/' + testName + '.module.visual-fixture';
+    = 'src/modules/' + testName + '/fixtures/' + testName + '.component.visual-fixture';
 
   plugins.push(
     new ngtools.AotPlugin({

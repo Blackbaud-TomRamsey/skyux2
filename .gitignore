@@ -68,4 +68,6 @@ yarn.lock
 webdriver-screenshotslocal*
 browserstack.err
 
+/visual/tmp/
+
 browserstack-binary/BrowserStackLocal
