@@ -28,67 +28,14 @@ var METADATA = webpackMerge(commonConfig.metadata, {
   HMR: HMR
 });
 
-function writeTSConfig(testName, file) {
-  var config = {
-    'compilerOptions': {
-      'target': 'es5',
-      'module': 'es2015',
-      'moduleResolution': 'node',
-      'emitDecoratorMetadata': true,
-      'experimentalDecorators': true,
-      'sourceMap': true,
-      'noEmitHelpers': true,
-      'noImplicitAny': true,
-      'rootDir': '.',
-      'inlineSources': true,
-      'declaration': true,
-      'skipLibCheck': true,
-      'lib': [
-        'es2015',
-        'dom'
-      ],
-      'types': [
-        'jasmine',
-        'node'
-      ]
-    },
-    'baseUrl': '../../../',
-    'paths': {
-      '@angular/common': ['node_modules/@angular/common'],
-      '@angular/compiler': ['node_modules/@angular/compiler'],
-      '@angular/core': ['node_modules/@angular/core'],
-      '@angular/forms': ['node_modules/@angular/forms'],
-      '@angular/platform-browser': ['node_modules/@angular/platform-browser'],
-      '@angular/platform-browser-dynamic':
-      ['node_modules/@angular/platform-browser-dynamic'],
-      '@angular/router': ['node_modules/@angular/router'],
-      '@angular/http': ['node_modules/@angular/http']
-    },
-    'exclude': [
-      '../../../node_modules',
-      '../../../dist',
-      '../../../src/app'
-    ],
-    'compileOnSave': false,
-    'buildOnSave': false
-  };
-
-  fs.ensureDirSync(helpers.root('visual/tmp/' + testName));
-
-  fs.writeJSONSync(helpers.root('visual/tmp/' + testName + '/tsconfig.json'), config);
-
-}
-
-function getVisualWebpackConfig(testName, file) {
-
-  // writeTSConfig(testName, file);
+function getVisualWebpackConfig(testName) {
 
   var plugins = [];
   var config;
   var entry = {};
   entry[testName] =
     helpers
-    .root('src/modules/' + testName + '/fixtures/' + testName + '.component.visual-bootstrap.ts');
+    .root('src/modules/' + testName + '/fixtures/' + testName + '.component.visual-fixture.ts');
   plugins.push(new HtmlWebpackPlugin({
     template: 'visual/index.html',
     chunks: ['polyfills', 'vendor', testName],

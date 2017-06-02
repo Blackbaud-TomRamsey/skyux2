@@ -8,6 +8,8 @@ import { Bootstrapper } from '../../../../visual/bootstrapper';
 
 import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 
+import { enableProdMode } from '@angular/core';
+
 @Component({
   selector: 'sky-demo-app',
   templateUrl: './alert.component.visual-fixture.html'
@@ -29,3 +31,8 @@ export class AppComponent {
   ]
 })
 export class AppModule { }
+
+Bootstrapper.bootstrapVisualModule();
+enableProdMode();
+platformBrowserDynamic().bootstrapModule(AppModule);
+
