@@ -9,4 +9,7 @@ export class Bootstrapper {
   public static bootstrapModule(moduleType: any) {
     platformBrowserDynamic().bootstrapModule(moduleType);
   }
+  public static bootstrapVisualModule() {
+
+  }
 }
