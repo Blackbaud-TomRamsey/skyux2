@@ -7,6 +7,13 @@ import { Component } from '@angular/core';
 export class GuidelineActionButtonsComponent {
   public routes = [
     {
+      name: 'Buttons and links',
+      path: '/guidelines/buttons-links',
+      icon: '',
+      // tslint:disable-next-line
+      summary: 'Describes the contexts in which to use different types of buttons and hyperlinks.'
+    },
+    {
       name: 'Call out information',
       path: '/guidelines/call-out-info',
       icon: '',
