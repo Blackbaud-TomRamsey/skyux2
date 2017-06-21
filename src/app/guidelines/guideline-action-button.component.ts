@@ -40,6 +40,13 @@ export class GuidelineActionButtonsComponent {
       icon: '',
       // tslint:disable-next-line
       summary: 'Form patterns determine the type of form to use to meet different workflow requirements.'
+    },    
+    {
+      name: 'Managing records',
+      path: '/guidelines/managing-records',
+      icon: '',
+      // tslint:disable-next-line
+      summary: 'Record management patterns provide guidance on how records should be added, edited and removed.'
     },
     {
       name: 'Page layouts',
