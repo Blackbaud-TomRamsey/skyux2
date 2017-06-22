@@ -15,6 +15,12 @@ function parseSassObject(sassObject, prefix) {
   }
 }
 
+var outFileLocation = process.argv[2];
+
+if (!outFileLocation) {
+  throw new Error('File location must be specified.');
+}
+
 var sassJson
   = yamlParse.safeLoad(fs.readFileSync(path.resolve(__dirname, 'colortokens.yaml'), 'utf8'));
 
@@ -25,5 +31,5 @@ var scssResult = '';
 parseSassObject(sassJson, prefix);
 
 console.log(scssResult);
-fs.writeFileSync(path.resolve(__dirname, '../../src/scss/_design-variables.scss'), scssResult);
+fs.writeFileSync(outFileLocation, scssResult);
 

@@ -35,7 +35,7 @@
     "start:visual": "node ./config/utils/visual-server.js start",
     "version": "npm run build",
     "watch": "npm run test:unit -- --auto-watch --no-single-run",
-    "build:sass": "node config/utils/build-sass-variables.js"
+    "build:sass": "node config/utils/build-sass-variables.js src/scss/_design-variables.scss"
   },
   "dependencies": {
     "@angular/animations": "4.1.3",
