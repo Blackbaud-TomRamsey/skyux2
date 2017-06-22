@@ -30,6 +30,5 @@ var scssResult = '';
 
 parseSassObject(sassJson, prefix);
 
-console.log(scssResult);
 fs.writeFileSync(outFileLocation, scssResult);
 
