@@ -17,7 +17,7 @@
       </ng-template>
 
       <ng-template ngSwitchDefault>
-        <div class="sky-dropdown-button-container" *ngIf="buttonType === 'select' || buttonType === 'tab' || !buttonType">
+        <div *ngIf="buttonType === 'select' || buttonType === 'tab' || !buttonType">
           <div class="sky-dropdown-button-content-container">
             <ng-content select="sky-dropdown-button"></ng-content>
           </div>

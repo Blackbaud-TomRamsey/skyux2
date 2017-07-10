@@ -30,18 +30,15 @@
   }
 }
 
-.sky-dropdown-button-container {
-  display: flex;
-}
 
 .sky-dropdown-button-content-container {
   flex-shrink: 1;
-  overflow: hidden;
   text-overflow: ellipsis;
+  display: inline-block;
 }
 
 .sky-dropdown-button-icon-container {
-  flex-grow: 1;
+  display: inline-block;
 }
 
 .sky-dropdown-menu {
