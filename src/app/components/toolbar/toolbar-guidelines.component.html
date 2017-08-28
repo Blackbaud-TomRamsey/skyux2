@@ -1,0 +1,152 @@
+<section>
+  
+  <header><div class="sky-section-heading">Usage</div></header>
+  
+  <div class="sky-subsection-heading">When to use a toolbar</div>
+  <p>When a particular content container requires actions be performed on it, those actions should be placed in a toolbar.</p>
+  
+  <div class="sky-subsection-heading">When not to use a toolbar</div>
+  <p>Toolbars should only be used in lists, below the page summary of a record page, or in a tile. In any other situation, a toolbar is not appropriate.</p>
+  
+</section>
+
+<section>
+  
+  <header><div class="sky-section-heading">Placement</div></header>
+  
+  <div class="sky-subsection-heading">List toolbar</div>
+  <p>The list toolbar is located above a list of records, and it contains actionsthat allow users to manipulate the contents and display of the list.Frequently used actions should appear directly in the toolbar, and lessfrequently used actions should live inside the more actions menu. Whenmultiple views of the list are available, the view switcher is docked on theright side of the toolbar.</p>
+  
+  <div class="sky-subsection-heading">Record toolbar</div>
+  <p>The record action bar is attached to the bottom of the page summarycomponent on record pages that allow the user to take actions.Frequently used actions show appear directly in the toolbar, and lessfrequently used actions should live inside the more actions menu.Specific actions for collapsing and expanding all subsequent tiles on therecord are docked on the right of the toolbar.</p>
+  
+  <div class="sky-subsection-heading">Tile toolbar</div>
+  <p>The tile toolbar is located directly above the control it affects, and itcontains actions that affect the contents and display of the tile or aportion of the tile. Only the most important actions should appeardirectly in the toolbar given the small amount of horizontal real estate ina tile. Additional actions should live inside the more actions menu. If a tilerequires no more than two filters, those filters should appear docked onthe right side of the toolbar.</p>
+  
+</section>
+
+<section>
+  
+  <header><div class="sky-section-heading">Layout</div></header>
+  
+  <div class="sky-subsection-heading">Anatomy of a toolbar</div>
+  
+  <div class="sky-subsection-heading">Action button order</div>
+  <p>The buttons in a toolbar should always appear in a consistent order. Not all toolbars will have every possible button, but when a button ispresent on a particular toolbar, it should be located in the expected place. The following standard actions should appear in this order fromleft to right when they are included in a toolbar.</p>
+  
+  <div>
+  
+    <sky-definition-list>
+      <sky-definition-list-content *ngFor="let item of addButtonInfo">
+        <sky-definition-list-label>
+          {{item.label}}
+        </sky-definition-list-label>
+        <sky-definition-list-value>
+          {{item.value}}
+        </sky-definition-list-value>
+      </sky-definition-list-content>
+    </sky-definition-list>
+    
+    <sky-definition-list>
+      <sky-definition-list-content *ngFor="let item of editButtonInfo">
+        <sky-definition-list-label>
+          {{item.label}}
+        </sky-definition-list-label>
+        <sky-definition-list-value>
+          {{item.value}}
+        </sky-definition-list-value>
+      </sky-definition-list-content>
+    </sky-definition-list>
+    
+    <sky-definition-list>
+      <sky-definition-list-content *ngFor="let item of saveButtonInfo">
+        <sky-definition-list-label>
+          {{item.label}}
+        </sky-definition-list-label>
+        <sky-definition-list-value>
+          {{item.value}}
+        </sky-definition-list-value>
+      </sky-definition-list-content>
+    </sky-definition-list>
+    
+    <sky-definition-list>
+      <sky-definition-list-content *ngFor="let item of filterButtonInfo">
+        <sky-definition-list-label>
+          {{item.label}}
+        </sky-definition-list-label>
+        <sky-definition-list-value>
+          {{item.value}}
+        </sky-definition-list-value>
+      </sky-definition-list-content>
+    </sky-definition-list>
+    
+    <sky-definition-list>
+      <sky-definition-list-content *ngFor="let item of sortButtonInfo">
+        <sky-definition-list-label>
+          {{item.label}}
+        </sky-definition-list-label>
+        <sky-definition-list-value>
+          {{item.value}}
+        </sky-definition-list-value>
+      </sky-definition-list-content>
+    </sky-definition-list>
+    
+    <sky-definition-list>
+      <sky-definition-list-content *ngFor="let item of columnsButtonInfo">
+        <sky-definition-list-label>
+          {{item.label}}
+        </sky-definition-list-label>
+        <sky-definition-list-value>
+          {{item.value}}
+        </sky-definition-list-value>
+      </sky-definition-list-content>
+    </sky-definition-list>
+    
+    <sky-definition-list>
+      <sky-definition-list-content *ngFor="let item of shareButtonInfo">
+        <sky-definition-list-label>
+          {{item.label}}
+        </sky-definition-list-label>
+        <sky-definition-list-value>
+          {{item.value}}
+        </sky-definition-list-value>
+      </sky-definition-list-content>
+    </sky-definition-list>
+    
+    <sky-definition-list>
+      <sky-definition-list-content *ngFor="let item of exportButtonInfo">
+        <sky-definition-list-label>
+          {{item.label}}
+        </sky-definition-list-label>
+        <sky-definition-list-value>
+          {{item.value}}
+        </sky-definition-list-value>
+      </sky-definition-list-content>
+    </sky-definition-list>
+    
+  </div>
+  
+  <div class="sky-subsection-heading">More actions</div>
+  <p>Less important or less frequently used actions should go in the more actions menu. Additionally, when there isn't enough horizontal spacefor all of the actions in a given toolbar, the standard actions should collapse into the more actions menu as needed.</p>
+  
+  <div class="sky-subsection-heading">Find in this list</div>
+  <p>When a toolbar needs a search component, it should follow the actions (and more actions button if used). The find in this list is alignedwith the action buttons, so if a user has a really large monitor resolution, it will still appear on the left side of the screen.</p>
+  
+  <div class="sky-subsection-heading">Items related to views</div>
+  <p>The portion of the toolbar that is docked on the right side of the screen is reserved for items that change or affect the view of the rest of the content container in a substantial way. Which items appear for a given toolbar largely depends on how the toolbar is being used. Ifmore than one of these exists in a given toolbar, they show up in this order from left to right.</p>
+  
+</section>
+
+<section>
+  
+  <header><div class="sky-section-heading">Responsiveness</div></header>
+  
+  <div class="sky-subsection-heading">Toolbar action wrapping</div>
+  <p>The actions in a toolbar (including the more actions button) shouldn't extend beyond 50% of the screen. If the actions would extendbeyond 50% of the screen, the rightmost action should collapse into the more actions menu.</p>
+  
+  <p>If there isn't already a more actions menu in a list that has too many actions to fit, a more actions menu should be created and the tworightmost actions should both be placed in it.</p>
+  
+  <div class="sky-subsection-heading">Smaller form factors</div>
+  <p>Once a screen gets too small, the action buttons should switch to be icon onlybuttons, the find in this list should collapse into a single search icon, and theview switcher should collapse into a single icon as well. Buttons that don't havean icon will need to go in the more actions menu. The more actions button,view switcher, and any other buttons that need to drop down will drop down toshow their options when pressed.</p>
+  
+</section>
