@@ -138,4 +138,22 @@ public exportButtonInfo: {label: string, value: string}[] = [
     }
   ];
   
+public moreButtonInfo: {label: string, value: string}[] = [
+    {
+      label: 'Text',
+      value: 'More'
+    },
+    {
+      label: 'Icon',
+      value: 'fa-ellipsis-h'
+    },
+    {
+      label: 'Dropdown',
+      value: 'None'
+    },
+    {
+      label: 'Notes',
+      value: 'The more actions button should only appear if there are at least two items in it. If there is only one additional action, show the button for that action instead of more actions.' }
+  ];
+  
 }
