@@ -1,5 +1,30 @@
-@import '../../scss/variables';
+@import '../../../scss/variables';
 
-div.sky-section-heading, div.sky-subsection-heading {
-  margin-top: 10px;
+div.sky-section-heading {
+  margin: $sky-margin-double 0 $sky-margin 0;
+}
+
+div.sky-subsection-heading {
+  margin: $sky-margin 0;
+}
+
+p {
+  margin: $sky-margin 0 !important;
+}
+
+div.screenshot {
+  box-sizing: border-box;
+  border: 30px solid;
+  
+  &.screenshot-info {
+    border-color: $sky-background-color-info-light;
+  }
+  
+  &.screenshot-success {
+    border-color: $sky-background-color-success;
+  }
+  
+  &.screenshot-danger {
+    border-color: $sky-background-color-danger;
+  }
 }
