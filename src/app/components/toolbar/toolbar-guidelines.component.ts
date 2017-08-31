@@ -2,7 +2,8 @@ import { Component } from '@angular/core';
 
 @Component({
   selector: 'sky-toolbar-guidelines',
-  templateUrl: './toolbar-guidelines.component.html'
+  templateUrl: './toolbar-guidelines.component.html',
+  styleURLs: ['./toolbar-guidelines.component.scss']
 })
 export class SkyToolbarGuidelinesComponent {
 
